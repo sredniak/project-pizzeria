@@ -83,8 +83,6 @@ export const select = {
   },
 };
 
-
-
 export const classNames = {
   menuProduct: {
     wrapperActive: 'active',
@@ -106,45 +104,39 @@ export const classNames = {
   }
 };
 
-
 export const settings = {
+  db: {
+    url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
+    products: 'products',
+    orders: 'orders',
+    product: 'product',
+    order: 'order',
+    bookings: 'bookings',
+    events: 'events',
+    dateStartParamKey: 'date_gte',
+    dateEndParamKey: 'date_lte',
+    notRepeatParam: 'repeat=false',
+    repeatParam: 'repeat_ne=false',
+  },
   amountWidget: {
     defaultValue: 1,
-    defaultMin: 1,
-    defaultMax: 9,
-    hours: {
-      open: 12,
-      close: 24,
-    },
-    datePicker: {
-      maxDaysInFuture: 14,
-    },
-    booking: {
-      tableIdAttribute: 'data-table',
-    },
-    db: {
-      url: '//localhost:3131',
-      product: 'product',
-      order: 'order',
-      booking: 'booking',
-      event: 'event',
-      dateStartParamKey: 'date_gte',
-      dateEndParamKey: 'date_lte',
-      notRepeatParam: 'repeat=false',
-      repeatParam: 'repeat_ne=false',
-    },
+    defaultMin: 0,
+    defaultMax: 10,
   },
   cart: {
     defaultDeliveryFee: 20,
   },
-  db: {
-    url: '//localhost:3131',
-    products: 'products',
-    orders: 'orders',
+  hours: {
+    open: 12,
+    close: 24,
   },
-
+  datePicker: {
+    maxDaysInFuture: 14,
+  },
+  booking: {
+    tableIdAttribute: 'data-table',
+  },
 };
-
 
 export const templates = {
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
